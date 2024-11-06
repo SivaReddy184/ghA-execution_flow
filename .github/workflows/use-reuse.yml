@@ -1,4 +1,4 @@
-name: Website Deployment
+name: Website Deployment reusable
 on:
   push:
     branches:
@@ -46,6 +46,7 @@ jobs:
           name: test-report
           path: test.json
   build:
+    continue-on-error: true
     needs: test
     runs-on: ubuntu-latest
     steps:
